@@ -100,20 +100,22 @@
     <developerConnection>scm:git:git@github.com:datasift/dropwizard-extra</developerConnection>
     <url>https://github.com/datasift/dropwizard-extra</url>
   </scm>
-  <!--
-  <distributionManagement>
-    <site>
-      <id>github</id>
-      <name>GitHub Pages Site</name>
-      <url>gitsite:git@github.com/datasift/dropwizard-extra.git</url>
-    </site>
-  </distributionManagement>
--->
+ <distributionManagement>
+        <repository>
+            <id>adlogica</id>
+            <name>AdLogica</name>
+            <url>dav:https://repository-adlogica.forge.cloudbees.com/release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>adlogica_snapshots</id>
+            <name>Adlogica Snapshots</name>
+            <url>dav:https://repository-adlogica.forge.cloudbees.com/snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
   <modules>
     <module>dropwizard-extra-curator</module>
     <module>dropwizard-extra-hbase</module>
     <module>dropwizard-extra-kafka</module>
-    <module>dropwizard-extra-kafka7</module>
     <module>dropwizard-extra-zookeeper</module>
     <module>dropwizard-extra-util</module>
   </modules>
@@ -266,6 +268,13 @@
       </extension>
     </extensions>
 -->
+<extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
   </build>
 
   <reporting>
